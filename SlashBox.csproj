@@ -304,7 +304,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\cameraMovement.cs" />
+    <Compile Include="Assets\Scripts\playerCombat.cs" />
     <Compile Include="Assets\Scripts\playerMovement.cs" />
+    <Compile Include="Assets\Scripts\playMode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

@@ -8,7 +8,7 @@ public class playerMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mvSpeed = 1f;
+		mvSpeed = 10f;
 	}
 	
 	// Update is called once per frame
