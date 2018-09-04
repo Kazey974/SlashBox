@@ -31,7 +31,7 @@ public class playerCombat : MonoBehaviour {
         Collider[] test = Physics.OverlapBox(col.bounds.center,col.bounds.extents,col.transform.rotation,LayerMask.GetMask("Ennemy","Neutral"));
         foreach(Collider c in test)
             {
-                Debug.Log(c.name);
+                //Debug.Log(c.name);
                 c.SendMessage("Hit",2f);
             }
     }

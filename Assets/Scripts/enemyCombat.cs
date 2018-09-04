@@ -24,15 +24,16 @@ public class enemyCombat : MonoBehaviour {
 	
 	void Update () {
     //Object is dead (hp<=0)
-        if(hp<=0f)          { dead = true; Destroy(gameObject); }
-    //Checks if target is on range
-        onrange = IsOnRange(atkHitbox);
-    //Target not acquired
-        if(target==null || Time.time > losTimer) { target = IsOnSight(lineOfSight); }
-    //Has a target
-        else 
-        {   
-            Combat(target);
+        if(hp<=0f) { dead = true; } else {
+        //Checks if target is on range
+            onrange = IsOnRange(atkHitbox);
+        //Target not acquired
+            if(target==null || Time.time > losTimer) { target = IsOnSight(lineOfSight); }
+        //Has a target
+            else 
+            {   
+                Combat(target);
+            }
         }
 	}
 

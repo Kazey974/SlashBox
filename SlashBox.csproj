@@ -346,6 +346,7 @@
     <Compile Include="Assets\Scripts\playerCombat.cs" />
     <Compile Include="Assets\Scripts\playerMovement.cs" />
     <Compile Include="Assets\Scripts\playMode.cs" />
+    <Compile Include="Assets\Scripts\sprite.cs" />
     <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\FastAction.cs" />
     <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\MaterialReferenceManager.cs" />
     <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\PackageResourceImporterWindow.cs" />
@@ -398,6 +399,7 @@
     <None Include="Assets\Scripts\playerCombat.cs.meta" />
     <None Include="Assets\Scripts\playerMovement.cs.meta" />
     <None Include="Assets\Scripts\playMode.cs.meta" />
+    <None Include="Assets\Scripts\sprite.cs.meta" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />
@@ -409,6 +411,7 @@
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackageSearchFilterTabs.uxml" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\PackagesLoading.uxml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>
