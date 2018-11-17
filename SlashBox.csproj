@@ -341,12 +341,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\cameraMovement.cs" />
-    <Compile Include="Assets\Scripts\enemyCombat.cs" />
-    <Compile Include="Assets\Scripts\playerCombat.cs" />
-    <Compile Include="Assets\Scripts\playerMovement.cs" />
-    <Compile Include="Assets\Scripts\playMode.cs" />
-    <Compile Include="Assets\Scripts\sprite.cs" />
+    <Compile Include="Assets\Scripts\Behavior_TestEnemy.cs" />
+    <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\EnemyControl.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Scripts\PlayMode.cs" />
+    <Compile Include="Assets\Scripts\SpriteDisplay.cs" />
+    <Compile Include="Assets\Scripts\Status.cs" />
+    <Compile Include="Assets\Scripts\test_remplacement.cs" />
     <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\FastAction.cs" />
     <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\MaterialReferenceManager.cs" />
     <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\PackageResourceImporterWindow.cs" />
@@ -394,12 +397,15 @@
     <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_UGUI_Private.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Scripts\cameraMovement.cs.meta" />
-    <None Include="Assets\Scripts\enemyCombat.cs.meta" />
-    <None Include="Assets\Scripts\playerCombat.cs.meta" />
-    <None Include="Assets\Scripts\playerMovement.cs.meta" />
-    <None Include="Assets\Scripts\playMode.cs.meta" />
-    <None Include="Assets\Scripts\sprite.cs.meta" />
+    <None Include="Assets\Scripts\Behavior_TestEnemy.cs.meta" />
+    <None Include="Assets\Scripts\CameraMovement.cs.meta" />
+    <None Include="Assets\Scripts\EnemyControl.cs.meta" />
+    <None Include="Assets\Scripts\Item.cs.meta" />
+    <None Include="Assets\Scripts\PlayerControl.cs.meta" />
+    <None Include="Assets\Scripts\PlayMode.cs.meta" />
+    <None Include="Assets\Scripts\SpriteDisplay.cs.meta" />
+    <None Include="Assets\Scripts\Status.cs.meta" />
+    <None Include="Assets\Scripts\test_remplacement.cs.meta" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />

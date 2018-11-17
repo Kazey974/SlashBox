@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraMovement : MonoBehaviour {
+public class CameraMovement : MonoBehaviour {
 
     public GameObject anchor;
     public float speed;

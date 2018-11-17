@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playMode : MonoBehaviour {
+public class PlayMode : MonoBehaviour {
 
     public GameObject playzone;
     public float ratio;
     private Vector3 scale;
-
-	// Use this for initialization
+    
 	void Start () {
 		if(ratio==0f) ratio = 1.5f;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	}
 
