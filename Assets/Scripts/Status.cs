@@ -29,24 +29,26 @@ public class Status : MonoBehaviour {
         st_time = 0f;
         st_cd = 0f;
     }
-	
-	void Update () {
-        ResetStatus();
-	}
 
-    public void ChangeStatus(string to,float cd = 0f)
+//	void Update () {
+//      ResetStatus();
+//	}
+
+//  public void ChangeStatus(string to,float cd = 0f)
+    public void ChangeStatus(string to)
     {
-        //Debug.Log(stat + "<-" + to);
-        stat = to; st_time = Time.time; st_cd = cd;
+//      Debug.Log(stat + "<-" + to);
+//      st_time = Time.time; st_cd = cd;
+        stat = to;
     }
     
     public void ResetStatus(string param = null)
     {
-        if((Time.time>=st_time+st_cd)&&(param==null||stat==param))
-        {
+//      if((Time.time>=st_time+st_cd)&&(param==null||stat==param))
+//      {
             stat = "idle";
-            st_cd = 0f; 
-        }
+//          st_cd = 0f; 
+//      }
     }
 
     public bool IsStat(string []check)
@@ -55,10 +57,10 @@ public class Status : MonoBehaviour {
         return (System.Array.IndexOf(check,stat)!= -1);
     }
 
-    /*void M_Fall()
-    {
-        s.ChangeStatus("falling");
-        c.Move(new Vector3(0,-s.curFall,0)*Time.deltaTime);
-        s.curFall += s.fallRatio;
-    }*/
+//  void M_Fall()
+//  {
+//      s.ChangeStatus("falling");
+//      c.Move(new Vector3(0,-s.curFall,0)*Time.deltaTime);
+//      s.curFall += s.fallRatio;
+//  }
 }

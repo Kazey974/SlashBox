@@ -9,7 +9,12 @@ public class SpriteDisplay : MonoBehaviour {
     public Animator animator;
     Vector3 move;
 
+    public GameObject[] Spawning;
+    public Stack<Transform> Target;
+
 	void Start () {
+        if(Spawning==null) Spawning = new GameObject[1];
+        Target = new Stack<Transform>();
         reference = transform.parent;
         move = reference.position;
 		orientation = Quaternion.Euler(45f,0f,0f);
@@ -40,4 +45,19 @@ public class SpriteDisplay : MonoBehaviour {
         }
     }
 
+    void Spawn(int x)
+    {
+        foreach(Transform t in Target)
+        { Instantiate<GameObject>(Spawning[x],t.position,Quaternion.identity); }
+    }
+
+    public void ClearTarget()
+    {
+        Target.Clear();
+    }
+
+    public void SetTarget(Transform t)
+    {
+        Target.Push(t);
+    }
 }

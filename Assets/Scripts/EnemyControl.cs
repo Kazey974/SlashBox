@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿/* N'EST PLUS UTILISE
+ * VOIR Behavior_TestEnemy*/ 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

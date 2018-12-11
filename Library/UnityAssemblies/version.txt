@@ -107,3 +107,6 @@ C:\Users\Kazey\Documents\UNITY\Un_2018.2.2f1\Editor\Data\MonoBleedingEdge\lib\mo
 C:\Users\Kazey\Documents\UNITY\Un_2018.2.2f1\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\UnityScript.dll
 C:\Users\Kazey\Documents\UNITY\Un_2018.2.2f1\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\UnityScript.Lang.dll
 C:\Users\Kazey\Documents\UNITY\Un_2018.2.2f1\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\Boo.Lang.dll
+C:/Users/Kazey/Documents/UNITY/Un_2018.2.2f1/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll
+C:/Users/Kazey/Documents/UNITY/Un_2018.2.2f1/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll
+C:/Users/Kazey/Documents/UNITY/Un_2018.2.2f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll

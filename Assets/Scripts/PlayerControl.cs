@@ -13,8 +13,15 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	void Update () {
-        if(C_Input()){ C_Attack(atkHitbox); }
-		if(M_Input()){ M_Walk(); }
+        if(C_Input()) {
+            C_Attack(atkHitbox);
+        }
+		else if(M_Input()) {
+            M_Walk();
+        }
+        else {
+            s.ResetStatus();
+        }
 	}
 
 #region Movement
@@ -25,7 +32,7 @@ public class PlayerControl : MonoBehaviour {
     }
      void M_Walk()
     {
-        s.ChangeStatus("move",0.2f);
+        s.ChangeStatus("move");
         var direction = new Vector3(Input.GetAxis("Horizontal"),-s.fallSpeed,Input.GetAxis("Vertical"));
         transform.LookAt(new Vector3(Input.GetAxis("Horizontal")+transform.position.x,transform.position.y,Input.GetAxis("Vertical")+transform.position.z));
         c.Move(direction*Time.deltaTime*s.curSpeed);
@@ -39,14 +46,14 @@ public class PlayerControl : MonoBehaviour {
         return false;
     }
 
-    void C_Hit(float dmg=1f)
+    public void C_Hit(float dmg=1f)
     {
         a.SetTrigger("anim_dmg");
     }
 
     void C_Attack (Collider col)
     {
-        s.ChangeStatus("atk",1f);
+        s.ChangeStatus("atk");
         s.atk_time = Time.time;
         Collider[] test = Physics.OverlapBox(col.bounds.center,col.bounds.extents,col.transform.rotation,LayerMask.GetMask("Ennemy","Neutral"));
         foreach(Collider c in test)
