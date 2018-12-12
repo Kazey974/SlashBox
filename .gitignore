@@ -1,6 +1,0 @@
-*.bin
-*.cache
-*.meta
-*.info
-Library/metadata/**
-Temp/**
