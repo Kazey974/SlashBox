@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 135115978559738592}
   - component: {fileID: 114271148043561468}
   m_Layer: 0
-  m_Name: attack_placeholder
+  m_Name: WingedF_Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 30
-  mpCollider: {fileID: 0}
+  animator: {fileID: 95717813582162546}
 --- !u!114 &114369519909829862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95717813582162546}
   collider: {fileID: 135115978559738592}
+  status: {fileID: 0}
   Spawning: []
 --- !u!135 &135115978559738592
 SphereCollider:

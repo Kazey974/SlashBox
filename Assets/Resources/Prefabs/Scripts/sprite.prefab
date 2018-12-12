@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95063636318714596}
   collider: {fileID: 0}
+  status: {fileID: 0}
   Spawning: []
 --- !u!212 &212791528820704654
 SpriteRenderer:

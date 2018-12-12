@@ -8,6 +8,7 @@ public class SpriteDisplay : MonoBehaviour {
     Quaternion orientation;
     public Animator animator;
     public Collider collider;
+    public Status status;
     Vector3 move;
 
     public GameObject[] Spawning;
@@ -68,5 +69,15 @@ public class SpriteDisplay : MonoBehaviour {
         {
             collider.enabled = !collider.enabled;
         }
+    }
+
+    void SetIdle()
+    {
+        if(status!=null) status.ResetStatus();
+    }
+
+    void Dead()
+    {
+        Destroy(transform.parent.gameObject);
     }
 }
