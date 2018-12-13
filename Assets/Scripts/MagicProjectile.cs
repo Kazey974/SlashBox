@@ -16,11 +16,10 @@ public class MagicProjectile : MonoBehaviour {
         } else { lifetime -= Time.deltaTime; }
 	}
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider col)
     {
         if(col.transform.name == "Player")
         {
-            Debug.Log("Hit !");
             PlayerControl PC = col.gameObject.GetComponent<PlayerControl>();
             PC.C_Hit();
         }

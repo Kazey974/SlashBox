@@ -9,14 +9,17 @@ public class SpriteDisplay : MonoBehaviour {
     public Animator animator;
     public Collider collider;
     public Status status;
+    public AudioSource audio;
+    public AudioClip[] sounds;
     Vector3 move;
 
-    public GameObject[] Spawning;
-    public Stack<Transform> Target;
+    public GameObject[] spawning;
+    public Stack<Transform> target;
 
 	void Start () {
-        if(Spawning==null) Spawning = new GameObject[1];
-        Target = new Stack<Transform>();
+        if(spawning==null) spawning = new GameObject[0];
+        if(sounds==null) sounds = new AudioClip[0];
+        target = new Stack<Transform>();
         reference = transform.parent;
         move = reference.position;
 		orientation = Quaternion.Euler(45f,0f,0f);
@@ -49,18 +52,18 @@ public class SpriteDisplay : MonoBehaviour {
 
     void Spawn(int x)
     {
-        foreach(Transform t in Target)
-        { Instantiate<GameObject>(Spawning[x],t.position,Quaternion.identity); }
+        foreach(Transform t in target)
+        { Instantiate<GameObject>(spawning[x],t.position,Quaternion.identity); }
     }
 
     public void ClearTarget()
     {
-        Target.Clear();
+        target.Clear();
     }
 
     public void SetTarget(Transform t)
     {
-        Target.Push(t);
+        target.Push(t);
     }
 
     void ToggleCollider()
@@ -79,5 +82,19 @@ public class SpriteDisplay : MonoBehaviour {
     void Dead()
     {
         Destroy(transform.parent.gameObject);
+    }
+
+    void PlaySound(int x)
+    {
+        audio.clip = sounds[x];
+        audio.Play();
+    }
+
+    void PlayRandomSound(string s)
+    {
+        int x = int.Parse(s.Split(',')[0]);
+        int y = int.Parse(s.Split(',')[1]);
+        audio.clip = sounds[(int)Random.Range(x,y)];
+        audio.Play();
     }
 }

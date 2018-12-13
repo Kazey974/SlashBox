@@ -14,7 +14,7 @@ public class Behavior_TestEnemy : MonoBehaviour {
     public SpriteDisplay sd;
     
     public bool state_Idle, state_Combat, noLos, noRange;
-    public float moveRate, moveTime, moveCd, nolosTime, nolosCd, atkCd, atkTime, idleTime, idleCd;
+    public float moveRange, moveTime, moveCd, nolosTime, nolosCd, atkCd, atkTime, idleTime, idleCd;
     int sec;
     Vector3 randMove;
 
@@ -25,7 +25,7 @@ public class Behavior_TestEnemy : MonoBehaviour {
         target      = null;
         noLos       = true;
         noRange     = true;
-        randMove    = transform.position;   moveRate = 12f;
+        randMove    = transform.position;   moveRange = 12f;
           idleTime  = 0f; idleCd  = 3f;
           moveTime  = 0f; moveCd  = 5f;
           nolosTime = 0f; nolosCd = 2f;
@@ -84,7 +84,7 @@ public class Behavior_TestEnemy : MonoBehaviour {
     {
         if(idleTime<=0f){
             if((int)Random.Range(1f, 2f) == 1){
-                randMove = new Vector3(transform.position.x + Random.Range(-moveRate,moveRate),0f,transform.position.z + Random.Range(-moveRate,moveRate));
+                randMove = new Vector3(transform.position.x + Random.Range(-moveRange,moveRange),0f,transform.position.z + Random.Range(-moveRange,moveRange));
                 moveTime = moveCd; }
             idleTime = idleCd;
         }else{ idleTime -= Time.deltaTime; }

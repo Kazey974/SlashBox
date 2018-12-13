@@ -7,14 +7,14 @@ public class PlayerControl : MonoBehaviour {
     public CharacterController c;
     public Status s;
     public Animator a;
-    public Collider atkHitbox;
+    public Collider selfCollider;
     
 	void Start () {
 	}
 
 	void Update () {
         if(C_Input()) {
-            C_Attack(atkHitbox);
+            //C_Attack();
         }
 		else if(M_Input()) {
             M_Walk();
@@ -48,7 +48,11 @@ public class PlayerControl : MonoBehaviour {
 
     public void C_Hit(float dmg=1f)
     {
-        a.SetTrigger("anim_dmg");
+        if(selfCollider.enabled)
+        {
+            a.SetTrigger("anim_dmg");
+            Debug.Log("Hit");
+        }
     }
 
     void C_Attack (Collider col)
