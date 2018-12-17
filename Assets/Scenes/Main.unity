@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -479,23 +479,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1724638865960214, guid: a4aa15ad75987bd468fff62aea666552,
     type: 2}
   m_PrefabInternal: {fileID: 1767576398}
---- !u!136 &777570084 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 136721624367084970, guid: a4aa15ad75987bd468fff62aea666552,
-    type: 2}
-  m_PrefabInternal: {fileID: 1767576398}
 --- !u!4 &777570085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4742156358041332, guid: a4aa15ad75987bd468fff62aea666552,
     type: 2}
   m_PrefabInternal: {fileID: 1767576398}
---- !u!81 &777570087
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 777570081}
-  m_Enabled: 1
 --- !u!1 &1287606208
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,16 +707,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114806664820367524, guid: a4aa15ad75987bd468fff62aea666552,
-        type: 2}
-      propertyPath: selfCollider
-      value: 
-      objectReference: {fileID: 777570084}
-    - target: {fileID: 212311678280356156, guid: a4aa15ad75987bd468fff62aea666552,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4aa15ad75987bd468fff62aea666552, type: 2}
   m_IsPrefabAsset: 0
@@ -803,16 +781,6 @@ Prefab:
     - target: {fileID: 4777521742126754, guid: 6d7cea691f73772419897ddc861cf2f0, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212641416497898862, guid: 6d7cea691f73772419897ddc861cf2f0,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65391980910140278, guid: 6d7cea691f73772419897ddc861cf2f0,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7cea691f73772419897ddc861cf2f0, type: 2}

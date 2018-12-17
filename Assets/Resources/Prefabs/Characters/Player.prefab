@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114022023439342874}
   - component: {fileID: 114806664820367524}
   - component: {fileID: 82379959832645196}
+  - component: {fileID: 81230681994005080}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -90,7 +91,7 @@ Transform:
   m_GameObject: {fileID: 1777793747056964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 4742156358041332}
   m_RootOrder: 1
@@ -103,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 1724638865960214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4206127967620092}
   - {fileID: 4447474260709550}
@@ -206,6 +207,13 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!81 &81230681994005080
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724638865960214}
+  m_Enabled: 1
 --- !u!82 &82379959832645196
 AudioSource:
   m_ObjectHideFlags: 1
@@ -310,7 +318,7 @@ Animator:
   m_GameObject: {fileID: 1777793747056964}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5c4406812312abb4785211e45b11371f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7552080e477a58447b7bb139a78b236f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -372,7 +380,7 @@ MonoBehaviour:
   c: {fileID: 143520018562907172}
   s: {fileID: 114022023439342874}
   a: {fileID: 95747541877227110}
-  atkHitbox: {fileID: 65843968978005804}
+  selfCollider: {fileID: 136721624367084970}
 --- !u!136 &136721624367084970
 CapsuleCollider:
   m_ObjectHideFlags: 1
