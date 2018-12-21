@@ -20,7 +20,7 @@ public class Status : MonoBehaviour {
 
     void Start()
     {
-		mvSpeed = 10f;
+		mvSpeed = 5f;
         curSpeed = mvSpeed;
         fallSpeed = 4f;
         fallRatio = 0.3f;

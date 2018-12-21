@@ -18,8 +18,10 @@ public class PlayerControl : MonoBehaviour {
         }
 		else if(M_Input()) {
             M_Walk();
+            if(a.GetBool("walking")!=true){a.SetBool("walking",true); Debug.Log("A");}
         }
         else {
+            if(a.GetBool("walking")==true){a.SetBool("walking",false);}
             s.ResetStatus();
         }
 	}
