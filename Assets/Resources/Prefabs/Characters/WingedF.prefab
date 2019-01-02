@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33327481077375908}
   - component: {fileID: 23809933671297722}
   - component: {fileID: 136919414768457934}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: los
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,9 +39,10 @@ GameObject:
   - component: {fileID: 4777521742126754}
   - component: {fileID: 65027226277751336}
   - component: {fileID: 114382982889050516}
+  - component: {fileID: 114919179655493642}
   - component: {fileID: 114144488215654072}
-  - component: {fileID: 195185471371053026}
   - component: {fileID: 82751915912568364}
+  - component: {fileID: 143404849885686806}
   m_Layer: 8
   m_Name: WingedF
   m_TagString: Untagged
@@ -78,7 +79,7 @@ GameObject:
   - component: {fileID: 33051311143290590}
   - component: {fileID: 23030880835310220}
   - component: {fileID: 65391980910140278}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +398,7 @@ MonoBehaviour:
   Los: {fileID: 136919414768457934}
   Range: {fileID: 65391980910140278}
   target: {fileID: 0}
-  agent: {fileID: 195185471371053026}
+  path: {fileID: 114919179655493642}
   animator: {fileID: 95301296954144200}
   s: {fileID: 114144488215654072}
   sd: {fileID: 114748068277262580}
@@ -439,6 +440,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 53a6ca0484b7b7a4c8ce54f20e3b9496, type: 3}
   spawning:
   - {fileID: 1645840209174364, guid: 5ed1e08fc5dc59545bee5d08a95121f1, type: 2}
+--- !u!114 &114919179655493642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156037368223750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a3302bb354e1945be54d3e041457b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  c: {fileID: 143404849885686806}
 --- !u!136 &136919414768457934
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -452,27 +465,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!195 &195185471371053026
-NavMeshAgent:
+--- !u!143 &143404849885686806
+CharacterController:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156037368223750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_AgentTypeID: 0
+  serializedVersion: 2
+  m_Height: 2
   m_Radius: 0.5
-  m_Speed: 4
-  m_Acceleration: 10
-  avoidancePriority: 50
-  m_AngularSpeed: 0
-  m_StoppingDistance: 2.1
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212641416497898862
 SpriteRenderer:
   m_ObjectHideFlags: 1

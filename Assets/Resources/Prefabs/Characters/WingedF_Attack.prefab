@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4579503349964954}
   - component: {fileID: 135115978559738592}
   - component: {fileID: 114271148043561468}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WingedF_Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,9 @@ MonoBehaviour:
   animator: {fileID: 95717813582162546}
   collider: {fileID: 135115978559738592}
   status: {fileID: 0}
-  Spawning: []
+  audio: {fileID: 0}
+  sounds: []
+  spawning: []
 --- !u!135 &135115978559738592
 SphereCollider:
   m_ObjectHideFlags: 1

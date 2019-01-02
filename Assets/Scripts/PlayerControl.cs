@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour {
         }
 		else if(M_Input()) {
             M_Walk();
-            if(a.GetBool("walking")!=true){a.SetBool("walking",true); Debug.Log("A");}
+            if(a.GetBool("walking")!=true){a.SetBool("walking",true);}
         }
         else {
             if(a.GetBool("walking")==true){a.SetBool("walking",false);}
@@ -53,7 +53,6 @@ public class PlayerControl : MonoBehaviour {
         if(selfCollider.enabled)
         {
             a.SetTrigger("anim_dmg");
-            Debug.Log("Hit");
         }
     }
 

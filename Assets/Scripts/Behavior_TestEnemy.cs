@@ -8,7 +8,7 @@ public class Behavior_TestEnemy : MonoBehaviour {
     public Collider Los;
     public Collider Range;
     public Transform target;
-    public NavMeshAgent agent;
+    public Pathfinding path;
     public Animator animator;
     public Status s;
     public SpriteDisplay sd;
@@ -94,19 +94,20 @@ public class Behavior_TestEnemy : MonoBehaviour {
     {
         moveTime -= Time.deltaTime;
         transform.LookAt(randMove);
-        agent.SetDestination(randMove);
+        path.SetDestination(randMove);
     }
 
     void Chase()
     {
         transform.LookAt(target);
-        agent.SetDestination(target.position);
+        path.SetDestination(target.position);
     }
 
     void Attack()
     {
         sd.ClearTarget();
         sd.SetTarget(target);
+        path.Stop();
         s.ChangeStatus("attacking");
         animator.Play("Attacking");
         atkTime = atkCd;
