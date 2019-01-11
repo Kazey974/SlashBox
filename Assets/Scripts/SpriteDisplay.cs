@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteDisplay : MonoBehaviour {
+    //Gère l'affichage des personnages
     
     Transform reference;
     Quaternion orientation;
     public Animator animator;
-    public Collider collider;
+    public Collider col;
     public Status status;
     public AudioSource audio;
     public AudioClip[] sounds;
@@ -24,7 +25,8 @@ public class SpriteDisplay : MonoBehaviour {
         move = reference.position;
 		orientation = Quaternion.Euler(45f,0f,0f);
 	}
-	
+
+#region AFFICHAGE
 	void LateUpdate () {
         //Show sprite facing camera
 		transform.rotation = orientation;
@@ -49,31 +51,41 @@ public class SpriteDisplay : MonoBehaviour {
             move = reference.position;
         }
     }
+#endregion
 
+    //SPAWN -   Liste des sous-éléments du personnage
+    //          Contient les attaques, invocations et autres à déclencher lors des animations
     void Spawn(int x)
     {
         foreach(Transform t in target)
         { Instantiate<GameObject>(spawning[x],t.position,Quaternion.identity); }
     }
-
-    public void ClearTarget()
-    {
-        target.Clear();
-    }
-
+    
+    //TARGET -  Ajoute une cible à la liste, permet d'avoir une référence pour les attaques
     public void SetTarget(Transform t)
     {
         target.Push(t);
     }
 
-    void ToggleCollider()
+    //TARGET -  Vide la liste de cibles, à appeler pendant tout nouveau ciblage
+    public void ClearTarget()
     {
-        if (collider != null)
+        target.Clear();
+    }
+    
+    //COLLIDER - du personnage (référence)
+    //          Permet d'activer ou désactiver le collider OU de le toggle (pourquoi ?)
+    void ToggleCollider(int x = -1)
+    {
+        if (col != null)
         {
-            collider.enabled = !collider.enabled;
+            if(x==0) col.enabled = false;
+            if(x==1) col.enabled = true;
+            if(x==-1)col.enabled = !col.enabled;
         }
     }
 
+    //STATUS
     void SetIdle()
     {
         if(status!=null) status.ResetStatus();
@@ -84,12 +96,14 @@ public class SpriteDisplay : MonoBehaviour {
         Destroy(transform.parent.gameObject);
     }
 
+    //SOUNDS -  Permet de jouer un son lors d'une animation
     void PlaySound(int x)
     {
         audio.clip = sounds[x];
         audio.Play();
     }
 
+    //SOUNDS -  Ou un son aléatoire dans une fourchette (exemple : 1 à 3)
     void PlayRandomSound(string s)
     {
         int x = int.Parse(s.Split(',')[0]);

@@ -61,7 +61,7 @@ public class Behavior_TestEnemy : MonoBehaviour {
         
         if(atkTime>0f) { //AtkCooldown
             atkTime -= Time.deltaTime;
-        } else if(s.IsStat(new string[] { "attacking" })) {
+        } else if(s.IsStat(new string[] { "attack" })) {
             s.ResetStatus();
         }
     }
@@ -108,8 +108,8 @@ public class Behavior_TestEnemy : MonoBehaviour {
         sd.ClearTarget();
         sd.SetTarget(target);
         path.Stop();
-        s.ChangeStatus("attacking");
-        animator.Play("Attacking");
+        s.ChangeStatus("attack");
+        animator.Play("Attack");
         atkTime = atkCd;
     }
     
