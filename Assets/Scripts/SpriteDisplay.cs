@@ -17,6 +17,9 @@ public class SpriteDisplay : MonoBehaviour {
     public GameObject[] spawning;
     public Stack<Transform> target;
 
+    float toggleColliderTimer;
+    int toggleColliderValue;
+
 	void Start () {
         if(spawning==null) spawning = new GameObject[0];
         if(sounds==null) sounds = new AudioClip[0];
@@ -24,6 +27,7 @@ public class SpriteDisplay : MonoBehaviour {
         reference = transform.parent;
         move = reference.position;
 		orientation = Quaternion.Euler(45f,0f,0f);
+        toggleColliderTimer = 0f;
 	}
 
 #region AFFICHAGE
@@ -51,14 +55,25 @@ public class SpriteDisplay : MonoBehaviour {
             move = reference.position;
         }
     }
-#endregion
+    #endregion
+
+    private void Update()
+    {
+        //Delayed ToggleCollider
+        if(toggleColliderTimer > 0f)
+        { 
+            if(toggleColliderTimer-Time.deltaTime < 0f) ToggleCollider(toggleColliderValue);
+            toggleColliderTimer -= Time.deltaTime;
+        }
+    }
 
     //SPAWN -   Liste des sous-éléments du personnage
     //          Contient les attaques, invocations et autres à déclencher lors des animations
     void Spawn(int x)
     {
-        foreach(Transform t in target)
-        { Instantiate<GameObject>(spawning[x],t.position,Quaternion.identity); }
+        foreach(Transform t in target) {
+            if(t!=null) Instantiate<GameObject>(spawning[x],t.position,Quaternion.identity);
+        }
     }
     
     //TARGET -  Ajoute une cible à la liste, permet d'avoir une référence pour les attaques
@@ -83,6 +98,17 @@ public class SpriteDisplay : MonoBehaviour {
             if(x==1) col.enabled = true;
             if(x==-1)col.enabled = !col.enabled;
         }
+    }
+
+    //Permet de lancer un ToggleCollider après un délai
+    void SetToggleColliderTimer(float t)
+    {
+        toggleColliderTimer = t;
+    }
+    //Valeur du prochain ToggleCollider délayé
+    void SetToggleColliderValue(int x)
+    {
+        toggleColliderValue = x;
     }
 
     //STATUS

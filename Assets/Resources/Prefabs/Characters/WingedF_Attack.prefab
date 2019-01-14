@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 95717813582162546}
-  collider: {fileID: 135115978559738592}
+  col: {fileID: 135115978559738592}
   status: {fileID: 0}
   audio: {fileID: 0}
   sounds: []

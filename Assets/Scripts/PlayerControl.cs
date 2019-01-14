@@ -53,7 +53,14 @@ public class PlayerControl : MonoBehaviour {
     {
         if(selfCollider.enabled)
         {
+            if((s.hp-dmg)<=0){
+                a.Play("Dead");
+                s.ChangeStatus("dead");
+                return;
+            }
             a.SetTrigger("takeDamage");
+            s.ChangeStatus("takeDamage");
+            s.hp-=dmg;
         }
     }
 

@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76991530b8b514447a0ba58c85fbfafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  hp: 5
   atk: 0
   mvSpeed: 0
   fallSpeed: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 95747541877227110}
-  collider: {fileID: 136721624367084970}
+  col: {fileID: 136721624367084970}
   status: {fileID: 114022023439342874}
   audio: {fileID: 82379959832645196}
   sounds: []
@@ -443,7 +443,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.8, y: 1.8}
+  m_Size: {x: 0.8, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

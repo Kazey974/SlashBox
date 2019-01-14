@@ -19,7 +19,9 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(anchor!=null){
         targetPos = new Vector3(anchor.transform.position.x,yOffset,anchor.transform.position.z+zOffset);
         transform.position = Vector3.Lerp(transform.position, targetPos, speed*Time.deltaTime);
+        }
     }
 }

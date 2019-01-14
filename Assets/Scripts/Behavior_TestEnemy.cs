@@ -99,8 +99,10 @@ public class Behavior_TestEnemy : MonoBehaviour {
 
     void Chase()
     {
+        if(target!=null){
         transform.LookAt(target);
         path.SetDestination(target.position);
+        }
     }
 
     void Attack()
