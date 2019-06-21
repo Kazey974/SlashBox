@@ -7,36 +7,41 @@ public class Pattern : MonoBehaviour {
     public Enemy enemy;
     public Transform player;
 
-    float chaseRange = 5, attackRange = 2;
+    float chaseRange = 5, attackRange = 2, maxCD = 1.5f, curCD = 0f;
     string state = "idle";
 
     private void Awake()
     {
-        enemy.setSPEED(2);
+        enemy.setStats(15,15,5,1,2);
     }
 
     private void Update()
     {
-        if(Vector3.Distance(player.position,transform.position) < attackRange && enemy.IsFacing())
+        float distance = Vector3.Distance(player.position,transform.position);
+        //AttackCooldown
+        if(curCD > 0){ curCD -= Time.deltaTime; }else{ curCD = 0; }
+
+        if(distance <= attackRange && enemy.IsFacing())
         {
-            if(state != "attack"){ Debug.Log(Time.time + "- attack"); state = "attack"; }
-            setAttack();
+            //if(state != "attack"){ Debug.Log(Time.time + "- attack"); state = "attack"; }
+            if(curCD==0) setAttack();
         }
-        else if (Vector3.Distance(player.position, transform.position) < chaseRange)
+        if(distance <= chaseRange && distance > attackRange)
         {
-            if(state != "chase"){ Debug.Log(Time.time + "- chase"); state = "chase"; }
+            //if(state != "chase"){ Debug.Log(Time.time + "- chase"); state = "chase"; }
             setChase();
         }
-        else
+        if(distance > chaseRange)
         {
-            if(state != "idle"){ Debug.Log(Time.time + "- idle"); state = "idle"; }
+            //if(state != "idle"){ Debug.Log(Time.time + "- idle"); state = "idle"; }
             setIdle();
         }
     }
 
     void setIdle()
     {
-        if(Vector3.Distance(enemy.direction,transform.position)<=0.5) enemy.StopMove();
+        float distance = Vector3.Distance(enemy.direction,transform.position);
+        if(distance<=0.5) enemy.StopMove();
     }
 
     void setChase()
@@ -51,6 +56,7 @@ public class Pattern : MonoBehaviour {
 
     void setAttack()
     {
+        curCD = maxCD;
         enemy.pathfinder.setTarget(player.position);
         if(enemy.pathfinder.Pathfinding())
         {

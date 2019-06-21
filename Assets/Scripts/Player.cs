@@ -27,4 +27,9 @@ public class Player : Entity {
     {
         direction = transform.position + new Vector3(Input.GetAxis("Horizontal"),0f,Input.GetAxis("Vertical"));
     }
+
+    public bool isAlive()
+    {
+        return getCurHP()>0;
+    }
 }

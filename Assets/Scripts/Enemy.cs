@@ -6,12 +6,10 @@ public class Enemy : Entity {
 
     public Pathfinder pathfinder;
 
-    float maxStamina = 500, curStamina = 500;
     bool setMove;
 
     private void LateUpdate()
     {
-        if(curStamina<maxStamina) curStamina++;
         if(setMove){ Move(); }else{ setMoving(0); }
     }
 
@@ -27,14 +25,11 @@ public class Enemy : Entity {
 
     public void InputAttack()
     {
-        if (curStamina > 0)
-        {
-            Attack();
-        }
+        Attack();
     }
 
-    public void DrainStamina(float x = 100)
+    public void DeleteEnemy()
     {
-        curStamina -= x;
+        gameObject.SetActive(false);
     }
 }
